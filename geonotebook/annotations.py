@@ -98,12 +98,12 @@ class Polygon(Annotation, sPolygon):
         # outside the bounds of our dataset.
 
         # Convert the image corner coordinates to WGS84
-        trgt_srs = CRS.from_string("EPSG:4326")
-        src_srs = raster_data.crs
-        transformed = [transform_coordinates(src_srs, trgt_srs, [i[0]], [i[1]])
-                       for i in raster_data.shape.exterior.coords]
-        reprojected_data_extent = sPolygon(transformed)
-        clipped = self.intersection(reprojected_data_extent)
+        #trgt_srs = CRS.from_string("EPSG:4326")
+        #src_srs = raster_data.crs
+        #transformed = [transform_coordinates(src_srs, trgt_srs, [i[0]], [i[1]])
+                       #for i in raster_data.shape.exterior.coords]
+        #reprojected_data_extent = sPolygon(transformed)
+        clipped = self.intersection(raster_data.shape)
 
         # Polygon is completely outside the dataset, return whatever
         # would have been returned by get_data()
