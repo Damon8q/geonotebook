@@ -527,6 +527,11 @@ class GeonotebookKernel(IPythonKernel):
 
         # TODO: Check if the msg is empty - no protocol - die
         self.geonotebook._remote = Remote(self.comm.send, self._unwrap(msg))
+        print('================================')
+        print(self.comm.send)
+        print(msg)
+        print(self._unwrap(msg))
+        print('================================')
         # Reply to the open comm,  this should probably be set up on
         # self.geonotebook._remote as an actual proceedure call
 
