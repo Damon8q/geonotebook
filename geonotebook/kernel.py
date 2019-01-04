@@ -583,7 +583,7 @@ class GeonotebookKernel(IPythonKernel):
         self.log = kwargs['log']
         print(kwargs['log'])
         print(self.log)
-        print "==================="
+        print ("===================")
         self.initializing = True
   
         super(GeonotebookKernel, self).__init__(**kwargs)
