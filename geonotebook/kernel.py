@@ -581,8 +581,11 @@ class GeonotebookKernel(IPythonKernel):
 
     def __init__(self, **kwargs):
         self.log = kwargs['log']
+        print(kwargs['log'])
+        print(self.log)
+        print("===================")
         self.initializing = True
-
+  
         super(GeonotebookKernel, self).__init__(**kwargs)
 
         self.comm_manager.register_target('geonotebook', self.handle_comm_open)
